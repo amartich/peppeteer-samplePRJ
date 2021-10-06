@@ -7,7 +7,7 @@ async function start(){
     await page.goto("https://learnwebcode.github.io/practice-requests/")
    // await page.screenshot({path: "prueba.png", fullPage: true})
     
-    //const names = ['red', 'orange', 'bolue']
+  //const names = ['red', 'orange', 'bolue']
     
     const names = await page.evaluate(() =>{
      return Array.from(document.querySelectorAll(".info strong")).map(x => x.textContent)
@@ -22,7 +22,6 @@ async function start(){
 
     const photos = await page.$$eval("img", (imgs) => {
         return imgs.map(x => x.src)
-
 
     })
 
